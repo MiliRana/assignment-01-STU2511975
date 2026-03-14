@@ -43,3 +43,12 @@ If the last order containing a product is deleted (for example the only row cont
 - unit price
 
 This means deleting an order can accidentally remove important product data from the system.
+
+
+## Normalization Justification
+
+Keeping all information in a single table may appear simple at first, but it creates several serious data management problems. In the orders_flat dataset, information about customers, products, orders, and sales representatives is stored in the same table. As a result, the same data is repeated across many rows. For example, if a customer places multiple orders, their name, email, and city appear again in every row related to those orders. Similarly, product details such as product_name, category, and unit_price are repeated whenever the same product appears in different orders.
+
+This repetition leads to update anomalies. For instance, if the price of a product changes, every row containing that product must be updated. If even one row is missed, the database will contain inconsistent pricing information. The flat table structure also creates delete anomalies. If the last order containing a particular product is deleted, all information about that product could be lost from the dataset. In addition, insert anomalies occur because a new product cannot be added to the system unless an order for that product already exists.
+
+Normalization solves these problems by separating the data into logical tables such as customers, products, orders, and sales representatives. Each table stores information about a single entity and relationships are maintained using keys. By organizing the database into Third Normal Form (3NF), redundancy is reduced and data integrity is improved, making the system easier to maintain and scale.
