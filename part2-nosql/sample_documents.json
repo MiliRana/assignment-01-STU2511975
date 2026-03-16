@@ -1,1 +1,50 @@
+[
+  {
+    "product_id": "E101",
+    "name": "Smartphone X12",
+    "category": "Electronics",
+    "brand": "TechNova",
+    "price": 39999,
+    "specifications": {
+      "voltage": "220V",
+      "battery": "5000mAh",
+      "storage": "256GB"
+    },
+    "warranty": {
+      "period": "1 year",
+      "type": "manufacturer"
+    },
+    "features": ["5G", "AMOLED Display", "Fast Charging"]
+  },
 
+  {
+    "product_id": "C205",
+    "name": "Men's Casual Shirt",
+    "category": "Clothing",
+    "brand": "UrbanStyle",
+    "price": 1499,
+    "sizes": ["S", "M", "L", "XL"],
+    "material": "Cotton",
+    "colors": ["Blue", "Black", "White"],
+    "care_instructions": {
+      "wash": "Machine Wash",
+      "dry": "Tumble Dry"
+    }
+  },
+
+  {
+    "product_id": "G310",
+    "name": "Organic Almonds",
+    "category": "Groceries",
+    "brand": "NatureFresh",
+    "price": 750,
+    "weight": "500g",
+    "expiry_date": "2026-06-01",
+    "nutritional_info": {
+      "calories": "575 kcal",
+      "protein": "21g",
+      "fat": "49g"
+    },
+    "ingredients": ["Almonds"]
+  }
+]
