@@ -21,16 +21,16 @@ CREATE TABLE sales_reps (
 
 CREATE TABLE orders (
     order_id VARCHAR(10) PRIMARY KEY,
-    customer_id VARCHAR(10),
-    sales_rep_id VARCHAR(10),
-    order_date DATE,
+    customer_id VARCHAR(10) NOT NULL,
+    sales_rep_id VARCHAR(10) NOT NULL,
+    order_date DATE NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
     FOREIGN KEY (sales_rep_id) REFERENCES sales_reps(sales_rep_id)
 );
 
 CREATE TABLE order_items (
-    order_id VARCHAR(10),
-    product_id VARCHAR(10),
+    order_id VARCHAR(10) NOT NULL,
+    product_id VARCHAR(10) NOT NULL,
     quantity INT NOT NULL,
     PRIMARY KEY (order_id, product_id),
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
@@ -70,4 +70,6 @@ INSERT INTO order_items VALUES
 ('O001','P002',2),
 ('O002','P003',1),
 ('O003','P004',5),
-('O004','P005',10);
+('O004','P005',10),
+('O005','P002',3),
+('O002','P005',7);
