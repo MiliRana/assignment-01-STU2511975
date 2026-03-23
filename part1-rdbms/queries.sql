@@ -1,4 +1,4 @@
--- Q1: List all customers from Mumbai along with their total order value
+- Q1: 
 SELECT 
     c.customer_name,
     SUM(p.unit_price * oi.quantity) AS total_order_value
@@ -13,7 +13,7 @@ WHERE c.customer_city = 'Mumbai'
 GROUP BY c.customer_name;
 
 
--- Q2: Find the top 3 products by total quantity sold
+- Q2:
 SELECT 
     p.product_name,
     SUM(oi.quantity) AS total_quantity_sold
@@ -25,7 +25,7 @@ ORDER BY total_quantity_sold DESC
 LIMIT 3;
 
 
--- Q3: List all sales representatives and the number of unique customers they have handled
+- Q3: 
 SELECT 
     s.sales_rep_name,
     COUNT(DISTINCT o.customer_id) AS unique_customers_handled
@@ -35,7 +35,7 @@ LEFT JOIN orders o
 GROUP BY s.sales_rep_name;
 
 
--- Q4: Find all orders where the total value exceeds 10,000, sorted by value descending
+- Q4:
 SELECT 
     o.order_id,
     SUM(p.unit_price * oi.quantity) AS total_order_value
@@ -49,7 +49,7 @@ HAVING SUM(p.unit_price * oi.quantity) > 10000
 ORDER BY total_order_value DESC;
 
 
--- Q5: Identify any products that have never been ordered
+- Q5: 
 SELECT 
     p.product_name
 FROM products p
